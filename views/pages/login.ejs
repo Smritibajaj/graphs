@@ -1,0 +1,111 @@
+<!-- views/pages/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script defer src="js/main.js"></script>
+    <script>
+    $(document).ready(function() {
+    $('.btn-outline-success').submit(function(event) {
+        event.preventDefault();
+        alert("Handler for .submit() called."); 
+        //sessionStorage.removeItem("token");
+        //localStorage.removeItem("userid");
+        //window.location.href='/report';
+        
+    });
+});
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <main>
+        <div class="container-fluid">
+
+            <div class="">
+                <h1>HeadCount Reports</h1>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Future workforce planning efforts must systematically account for alternative
+                    worker types.</h5>
+                <canvas id="canvas"></canvas>
+                <p class="card-text">Headcount reporting is supposed to be a simple counting process with a tangible
+                    outcome. However, counting the “number of people a business employs on a global basis” is not as
+                    straightforward as it should be. In one recent case, a corporate human resources (HR) report showed
+                    that the company’s global workforce was comprised of 1,200 persons, while a tabulation across
+                    business units came to 1,157, and a finance report showed 1,270 persons.
+                    <br/>
+                    While all were arithmetically correct and tabulated for the same day, each report adopted a
+                    different construct. The HR report counted full-time employees, temporary workers who replaced
+                    full-time workers on leave, and part-time employees. The business units reported only full-time
+                    workers, and the finance report was based on full-time workers, part-time workers, casual workers.
+                    Above and beyond these tabulations, the budgeting headcount was 1,200, and the workforce planning
+                    number for the comparable period of the previous year was 1,195. An objective observer could say
+                    these counts are technically all correct. A frustrated executive would say there should be one, and
+                    only one, answer.
+                    <br/>
+                    This graph explores why headcount reporting problems exist and will likely worsen, especially for
+                    multinational companies, unless improved workforce planning frameworks are implemented.</p>
+                <a href="#" class="btn btn-primary">Create Personalize Reports</a>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="row" id="popup1">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">HR Reports</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to graph content.</p>
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="number " id="fulltime" class="form-control" placeholder="Number of Full Time employees">
+                            </div>
+                            <div class="col">
+                                <input type="number" id="parttime" class="form-control" placeholder="Number of Part Time employees">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="number" id="casual" class="form-control" placeholder="Number of Casual employees">
+                            </div>
+                            <div class="col">
+                                <input type="number" id="contractor" class="form-control" placeholder="Number of Contractor">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                                <div class="col">
+                                        <select id="type" class="custom-select" >
+                                                <option selected>pie</option>
+                                                <option value="1">doughnut</option>
+                                                <option value="2">line</option>
+                                                <option value="3">bar</option>
+                                              </select>
+                                </div>
+                                <div class="col">
+                                </div>
+                            </div>
+                    </form>
+                    <a onclick="usergraphfunc();" href="javascript:void(0);" id="create" class="btn btn-primary">Create</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="dialog" class="dialog" title="Basic dialog">
+    <canvas style="margin-top:1rem;"id="usergraph"></canvas>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

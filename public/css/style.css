@@ -1,0 +1,23 @@
+.dialog-box{
+    height: 20px;
+    width: 20px;
+    float: right;
+    margin: 2px;
+}
+.dialog {
+    background: white;
+}
+.background{
+    background: blue;
+    color:blue
+}
+.main{
+    background: linear-gradient(to left,#3f51b6,#095450);
+}
+.color, .nav-tabs{
+    color: #61d2b4;
+}
+.bg-color{
+    background: #00599d!important;
+    color: white !important;
+}
