@@ -1,3 +1,19 @@
+// hiding errer msg
+$('#emailHelp2').hide();
+$('#emailHelp4').hide();
+$('#password2').hide();
+$('#password4').hide();
+
+function validateEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+function checkPassword(password) {
+    var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    return re.test(password);
+}
+
 function signupfunc(){
     $('#signup-act').addClass('active');
     $('#login-act').removeClass('active');
@@ -17,6 +33,14 @@ $(document).ready(function() {
       alert( "Handler for .submit() called." );    
       var email1 = $('#exampleInputEmail1').val();
       var password1 = $('#inputPassword1').val();
+      if (!validateEmail(email1)){
+        $('#emailHelp2').show();
+        $('#signup').attr('disabled','disabled');
+      }
+      if (!checkPassword(password1)){
+        $('#password2').show();
+        $('#signup').attr('disabled','disabled');
+      }
       var data1 = {
         "user": {
         "email": email1,
@@ -44,10 +68,14 @@ $(document).ready(function() {
         alert( "Handler for .submit() called." );    
         var email2 = $('#exampleInputEmail2').val();
         var password2 = $('#inputPassword2').val();
-        var mtdetail = sessionStorage.getItem('mydetails');
-        JSON.stringify(mtdetail);
-        JSON.parse(mtdetail);
-        console.log(mtdetail);
+        if (!validateEmail(email1)){
+          $('#emailHelp2').show();
+          $('#login').attr('disabled','disabled');
+        }
+        if (!checkPassword(password1)){
+          $('#password2').show();
+          $('#login').attr('disabled','disabled');
+        }
         var data2 = {
           "user": {
           "email": email2,

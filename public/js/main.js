@@ -1,3 +1,4 @@
+
 //create canvas on the fly through get api
 $(document).ready(function() {
   var ctx = $("#canvas")  ;
@@ -61,3 +62,5 @@ var usergraph = {
         openDialog();
         getcanvas(usercanvas,usergraph);   
 };
+
+
