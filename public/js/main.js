@@ -1,4 +1,3 @@
-
 //create canvas on the fly through get api
 $(document).ready(function() {
   var ctx = $("#canvas")  ;
@@ -41,7 +40,7 @@ function getcanvas(ctx,data){
 }
 //function redirect to personalize reports
 function redirect(){
-  window.location.href='/filter';
+  window.location.href= '/filter';
 }
 // create customize graph function
 function usergraphfunc(){

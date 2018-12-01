@@ -36,10 +36,12 @@ $(document).ready(function() {
       if (!validateEmail(email1)){
         $('#emailHelp2').show();
         $('#signup').attr('disabled','disabled');
+        return
       }
       if (!checkPassword(password1)){
         $('#password2').show();
         $('#signup').attr('disabled','disabled');
+        return
       }
       var data1 = {
         "user": {
@@ -60,6 +62,9 @@ $(document).ready(function() {
         localStorage.setItem("userid",data.user._id)
         window.location.href='/login';
         },
+        error: function() {
+          $('#password2').show();
+       }
       });
     });
 
@@ -71,10 +76,12 @@ $(document).ready(function() {
         if (!validateEmail(email1)){
           $('#emailHelp2').show();
           $('#login').attr('disabled','disabled');
+          return
         }
         if (!checkPassword(password1)){
           $('#password2').show();
           $('#login').attr('disabled','disabled');
+          return
         }
         var data2 = {
           "user": {
@@ -93,9 +100,12 @@ $(document).ready(function() {
           success: function(data) {
           console.log(data);
           sessionStorage.setItem("token", data.user.token);
-        localStorage.setItem("userid",data.user._id)
+          localStorage.setItem("userid",data.user._id)
           window.location.href='/login';
           },
+          error: function() {
+            $('#password4').show();
+         }
         });
       });
     });
