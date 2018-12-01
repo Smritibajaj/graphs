@@ -1,3 +1,5 @@
+let usercanvas = $('#usergraph');
+usercanvas.hide();
 //create canvas on the fly through get api
 $(document).ready(function () {
   var ctx = $("#canvas");
@@ -15,8 +17,6 @@ $(document).ready(function () {
     },
   });
 });
-
-
 
 // common dialog box
 function openDialog() {
@@ -39,9 +39,8 @@ function redirect() {
 }
 // create customize graph function
 function usergraphfunc() {
-  alert("Handler for .submit() called.");
+  //alert("Handler for .submit() called.");
   var arr = [];
-  var usercanvas = $('#usergraph');
   var labels = ["Fulltime", "Parttime", "Casual", "Contractor"];
   var backgroundColor = ['red', 'blue', 'green', 'yellow'];
   var graphtype = $('option:selected').text();
@@ -49,14 +48,15 @@ function usergraphfunc() {
     var input = $(this).val();
     arr.push(input);
   })
-  console.log(arr);
+  //console.log(arr);
   var usergraph = {
     type: graphtype,
     options: {},
     label: labels,
     datasets: [{ data: arr, backgroundColor: backgroundColor }]
   }
-  console.log(usergraph);
+  usercanvas.show();
+  //console.log(usergraph);
   openDialog();
   getcanvas(usercanvas, usergraph);
 };
