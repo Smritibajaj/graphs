@@ -1,47 +1,145 @@
 <!-- views/pages/index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <% include ../partials/head %>
+  <% include ../partials/head %>
+  <script defer src="/js/filter.js"></script>
 </head>
+
 <body>
 
-<header>
+  <header>
     <% include ../partials/header %>
-</header>
+  </header>
 
-<main>
-        <div class="container-fluid">
-                <div class="row">
-                        <div class="card col-lg-6 bg-light">
-                                <div class="card-header">
-                                  Financial Reports
-                                </div>
-                                <div class="card-body">
-                                  <h5 class="card-title">Special title treatment</h5>
-                                  <canvas id="myDoughnutChart1"></canvas>
-                                </div>
-                              </div>
-    
-                        
-                              <div class="card col-lg-6 bg-light">
-                                    <div class="card-header">
-                                      HR Reports
-                                    </div>
-                                    <div class="card-body">
-                                      <h5 class="card-title">Special title treatment</h5>
-                                      <canvas id="myDoughnutChart2"></canvas>
-                                    </div>
-                                  </div>
+  <main>
+      
+    <div class="mx-5">
+        <h1>Employee Appraisal Report</h1>
+      <p>In most companies, performance is assessed several times a year during (bi-)annual performance reviews.
+        Employees are assessed on several criteria, the quality of their work being the most common.
+        <br />
+        An adaption of this scheme is the so-called 9-box grid. The 9-box grid is based on a 3×3 table in which the
+        employee is assessed on performance and potential. Employees with high performance but low potential are
+        perfect for their current function.
+        <br />
+        Employees in the top right corner, those who score high on both performance and potential, are often designated
+        to quickly advance through the organizational ranks as they can add more value higher up the ladder.
+        <br />
+        This 9-box grid is an easy way to assess the current and future value of employees and is a helpful tool for
+        succession management (i.e. you want to promote your high potentials).
+      </p>
+      <img style="width:50%; height:50%; margin-left:30%;" src="/images/Apraisal.png" />
+    </div>
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+              aria-controls="collapseOne">
+              Manager Ratings
+            </button>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <label for="name">Employee Name</label>
+                  <input type="text" id="name" class="form-control" placeholder="Full Name">
                 </div>
-            </div>     
-</main>
-        
-<footer>
+                <div class="col">
+                  <label for="rating">Employee Performance</label>
+                  <input type="number" id="performance" class="form-control" placeholder="Performance">
+                </div>
+                <div class="col">
+                  <label for="rating">Employee Potential</label>
+                  <input type="number" id="potential" class="form-control" placeholder="Potential">
+                </div>
+              </div>
+              <button id="pusharr" class="btn btn-primary">Add Rating</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              VP Ratings
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <label for="name">Employee Name</label>
+                  <input type="text" id="vname" class="form-control" placeholder="Full Name">
+                </div>
+                <div class="col">
+                  <label for="rating">Employee Performance</label>
+                  <input type="number" id="vperformance" class="form-control" placeholder="Performance">
+                </div>
+                <div class="col">
+                  <label for="rating">Employee Potential</label>
+                  <input type="number" id="vpotential" class="form-control" placeholder="Potential">
+                </div>
+              </div>
+              <button id="msearch" class="btn btn-primary">Add Rating</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              CEO Ratings
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+
+            <form>
+              <div class="row">
+                <div class="col">
+                  <label for="name">Employee Name</label>
+                  <input type="text" id="cname" class="form-control" placeholder="Full Name">
+                </div>
+                <div class="col">
+                  <label for="rating">Employee Performance</label>
+                  <input type="number" id="cperformance" class="form-control" placeholder="Performance">
+                </div>
+                <div class="col">
+                  <label for="rating">Employee Potential</label>
+                  <input type="number" id="cpotential" class="form-control" placeholder="Potential">
+                </div>
+              </div>
+              <button id="csearch" class="btn my-3">Add Rating</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
     <% include ../partials/footer %>
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

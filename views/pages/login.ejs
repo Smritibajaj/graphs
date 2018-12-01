@@ -5,18 +5,6 @@
 <head>
     <% include ../partials/head %>
     <script defer src="js/main.js"></script>
-    <script>
-    $(document).ready(function() {
-    $('.btn-outline-success').submit(function(event) {
-        event.preventDefault();
-        alert("Handler for .submit() called."); 
-        //sessionStorage.removeItem("token");
-        //localStorage.removeItem("userid");
-        //window.location.href='/report';
-        
-    });
-});
-    </script>
 </head>
 
 <body>
@@ -51,7 +39,7 @@
                     <br/>
                     This graph explores why headcount reporting problems exist and will likely worsen, especially for
                     multinational companies, unless improved workforce planning frameworks are implemented.</p>
-                <a href="#" class="btn btn-primary">Create Personalize Reports</a>
+                <a href="javascript:void(0);" onclick="rediect()" class="btn btn-primary">Create Personalize Reports</a>
 
             </div>
         </div>

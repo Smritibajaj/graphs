@@ -39,6 +39,10 @@ function getcanvas(ctx,data){
     options:  data.options,
   });
 }
+//function redirect to personalize reports
+function redirect(){
+  window.location.href='/filter';
+}
 // create customize graph function
 function usergraphfunc(){
   alert( "Handler for .submit() called." );
