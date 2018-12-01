@@ -1,3 +1,4 @@
+//static data for graphs 
 var chartData = {
     labels: ['Cananda', 'US', 'Japan', 'UK'],
     datasets: [{

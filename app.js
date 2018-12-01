@@ -4,10 +4,10 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const cors = require('cors');
-// Imports routes for the reports
+// Imports routes for the reports and users
 const reports = require('./routes/reports.route');
 const users = require('./routes/user.route');
-const user =require('./models/users.model');
+const user = require('./models/users.model');
 const config = require('./config/passport');
 const passport = require('./config/passport');
 // initialize our express app
@@ -23,7 +23,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 // for body parser
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 // for public folder
 app.use(express.static('public'));
 //set view engine
@@ -33,17 +33,17 @@ app.use(session({ secret: 'passport-tutorial', cookie: { maxAge: 60000 }, resave
 app.use('/reports', reports);
 app.use('/users', users);
 // index page 
-app.get('/report', function(req, res) {
+app.get('/report', function (req, res) {
     res.render('pages/index');
 });
 // about page 
-app.get('/about', function(req, res) {
+app.get('/about', function (req, res) {
     res.render('pages/about');
 });
-app.get('/login', function(req, res) {
+app.get('/login', function (req, res) {
     res.render('pages/login');
 });
-app.get('/filter', function(req, res) {
+app.get('/filter', function (req, res) {
     res.render('pages/filter');
 });
 //port no to express to test server write node app.js in terminal
