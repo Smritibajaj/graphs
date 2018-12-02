@@ -23,6 +23,9 @@ function openDialog() {
   $("#dialog").dialog();
   $('.ui-dialog-titlebar').addClass('background');
   $('.ui-dialog-titlebar-close').addClass('dialog-box');
+  var image = '<img src="/images/close.png" class="me">'
+  $('.ui-dialog-titlebar-close').append(image);
+  $('.me').addClass('close');
 }
 
 //function to create graph 

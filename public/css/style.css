@@ -1,15 +1,29 @@
+body{
+    width:100%;
+}
 .dialog-box{
     height: 20px;
     width: 20px;
     float: right;
     margin: 2px;
+    background: blue;
+    border: none;
 }
 .dialog {
     background: white;
 }
+.close{
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: -3px !important;
+    margin-left: -28px !important;
+}
 .background{
     background: blue;
-    color:blue
+    color:white;
+}
+.background span{
+    padding: 10px;
 }
 .main{
     background: linear-gradient(to left,#3f51b6,#095450);
@@ -17,15 +31,18 @@
 .color, .nav-tabs{
     color: #61d2b4;
 }
+.bg-color{
+    background: #3f51b6 !important;
+    color: white !important;
+}
 /* DEMO-SPECIFIC STYLES */
-.typewriter h2 {
+.typewriter h1 {
     color: #fff;
     font-family: monospace;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
     animation: 
       typing 3.5s steps(30, end),
       blink-caret .5s step-end infinite;
@@ -53,3 +70,28 @@
     from, to { border-color: transparent }
     50% { border-color: orange; }
 }
+.margin{
+     
+}
+@media (max-width: 575.98px) { 
+    .margin{
+        margin-top: 4rem;       
+    } 
+    h1{
+        font-size:24px; 
+    } 
+    .typewriter h1 {
+        letter-spacing: 0em;
+    }
+    
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .margin{
+        margin-top: 4rem;       
+    } 
+}
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .margin{
+        margin-top: 4rem;       
+    } 
+ }
