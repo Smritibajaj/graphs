@@ -25,6 +25,10 @@ body{
 .background span{
     padding: 10px;
 }
+.card-warn{
+    margin-top: 6px !important;
+    font-size: 10px !important;
+}
 .main{
     background: linear-gradient(to left,#3f51b6,#095450);
 }

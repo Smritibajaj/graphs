@@ -63,14 +63,6 @@ function pushinarray(obj) {
   array.push(obj);
   return array;
 }
-// to create graph
-function getcanvas(ctx, data) {
-  var canvas = new Chart(ctx, {
-    type: data.type,
-    data: { labels: data.label, datasets: data.datasets },
-    options: data.options,
-  });
-}
 
 // all click events will work once page is loaded completely
 $(document).ready(function () {

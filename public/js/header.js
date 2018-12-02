@@ -13,3 +13,12 @@ window.onpopstate = function () {
     else { history.go(1); }
 
 };
+//function to create graph 
+//common for all js files
+function getcanvas(ctx, data) {
+    var canvas = new Chart(ctx, {
+      type: data.type,
+      data: { labels: data.label, datasets: data.datasets },
+      options: data.options,
+    });
+}

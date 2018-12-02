@@ -28,14 +28,7 @@ function openDialog() {
   $('.me').addClass('close');
 }
 
-//function to create graph 
-function getcanvas(ctx, data) {
-  var canvas = new Chart(ctx, {
-    type: data.type,
-    data: { labels: data.label, datasets: data.datasets },
-    options: data.options,
-  });
-}
+
 //function redirect to personalize reports
 function redirect() {
   window.location.href = '/filter';
